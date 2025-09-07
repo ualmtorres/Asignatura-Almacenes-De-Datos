@@ -77,19 +77,19 @@ Gestión y análisis de la información en la organización. Esto comprende asig
 
 ## Horario de clase y de tutorías
 
-* Grupo docente: Aula 12 - Aulario III
-** Horario de clase: Miércoles de 16h a 18h
-** 13 sesiones presenciales = 26 horas.
-* Grupo de trabajo: Aula - Aulario V (Aulas de Informática)
-** Horario de clase: Miércoles de 18h a 20h
-** 10 sesiones presenciales = 20 horas.
+* Grupo docente: 13 sesiones presenciales = 26 horas.
+** Aula 16 - Aulario IV. Jueves de 16h a 18h
 
-* link:Docs/PlanificacionAD.html[Planificación de la asignatura, window=_blank]
+* Grupos de trabajo: 10 sesiones presenciales = 20 horas.
+** A2: Aula - Aulario V (Aulas de Informática). Lunes de 18h a 20h
+** A1: Aula - Aulario V (Aulas de Informática). Jueves de 18h a 20h
+
+* https://docs.google.com/document/d/10pIhD9qRzVqlHihyW-6VFIlvNQRG2AYiqhOA-Knk_UA/edit?usp=drive_link[Planificación de la asignatura, window=_blank]
 
 Profesores:
 
 * Manuel Torres Gil
-** Tutorías: Martes y Miércoles de 10h a 13h. Solicitar cita previa
+** Tutorías: Lunes y Jueves de 11h a 14h. Solicitar cita previa
 ** Despacho: 2.19.5 CITE III (2a planta)
 
 ## Cómo seguir la asignatura
