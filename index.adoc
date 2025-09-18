@@ -81,8 +81,8 @@ Gestión y análisis de la información en la organización. Esto comprende asig
 ** Aula 16 - Aulario IV. Jueves de 16h a 18h
 
 * Grupos de trabajo: 10 sesiones presenciales = 20 horas.
-** A2: Aula - Aulario V (Aulas de Informática). Lunes de 18h a 20h
-** A1: Aula - Aulario V (Aulas de Informática). Jueves de 18h a 20h
+** A2: Aula 11 - Aulario V (Aulas de Informática). Lunes de 18h a 20h
+** A1: Aula 11 - Aulario V (Aulas de Informática). Jueves de 18h a 20h
 
 * https://docs.google.com/document/d/10pIhD9qRzVqlHihyW-6VFIlvNQRG2AYiqhOA-Knk_UA/edit?usp=drive_link[Planificación de la asignatura, window=_blank]
 
