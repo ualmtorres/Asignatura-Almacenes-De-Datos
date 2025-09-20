@@ -52,9 +52,19 @@ A continuación se detallan los pasos necesarios para solicitar una suscripción
 +
 image::images/azure-inicio.png[Panel de inicio de Azure]
 . Solicitar la suscripción gratuita para estudiantes de 100 USD. Esta suscripción permite acceder a todos los servicios de Azure durante un año sin coste alguno. Para ello, se debe hacer clic en el botón "Suscríbase ahora" que aparece en la parte superior de la pantalla.
++
+[NOTE]
+====
+Si aparece un mensaje indicando que no se puede verificar si es estudiante, hacer clic sobre el enlace proporcionado para verificar el estado de estudiante. Esto abrirá una nueva ventana en la que se debe introducir los datos personales esenciales de la cuenta de estudiante. Una vez verificado el estado de estudiante, se podrá solicitar la suscripción gratuita.
+====
 . Se abrirá una nueva ventana en la que se deberá hacer clic en el botón "Empezar gratis". Aparecerá un formulario que habrá que rellenar con algunos datos personales mínimos.
 +
 image::images/azure-suscripcion.png[Formulario de solicitud de suscripción gratuita]
++
+[NOTE]
+====
+Si la cuenta de Azure ya estuvo activa durante el curso anterior, es posible que haya que renovar la suscripción gratuita. En ese caso, aparecerá un mensaje indicando que la suscripción ha expirado y se deberá hacer clic en el enlace proporcionado para renovar la suscripción gratuita.
+====
 . Aceptar los términos y condiciones de la suscripción gratuita y hacer clic en el botón "Siguiente". Se mostrará un mensaje de confirmación de la suscripción.
 +
 image::images/azure-acuerdo.png[Confirmación de la suscripción gratuita]
