@@ -55,7 +55,7 @@ Disponible el link:./SalesReportFabric.ipynb[cuaderno Jupyter] con el código de
 
 ## Introducción
 
-Las soluciones de análisis de datos tradicionales estaban construidas sobre la base de un almacén de datos, en la que los datos se almancenan siguiendo un modelo multidimensional. Es habitual encontrar implementaciones ROLAP en la que los datos se almacenan en tablas relacionales siguiendo un esquema en estrella y son consultadas mediante SQL. pero con la aparición del fenómeno de _Big data_ o macrodatos, (caracterizados por las 3 V: volumen, velocidad y variedad) las organizaciones han tenido que adaptar sus soluciones de análisis de datos para poder procesar y analizar grandes volúmenes de datos de diferentes fuentes y formatos. Esto normalmente nos lleba a tecnologías de almacenamiento y procesamiento a escala cloud, lo que da pie a la aparición de soluciones de almacenamiento como Azure Data Lake y de procesamiento como Spark. En un data lake, los datos se almacenan en su formatoi natico, como archivos sin imponer un esquema fijo para su almacenamiento. Y esto puede ser llevado más allá con la aparición de los lakehouses, que combinan la flexibilidad de los data lakes (almacenando los datos en archivos en un data lake) con la capacidad de consulta y análisis de los almacenes de datos (se crea una capa de metadatos adicional ofreciendo un acceso mediante un esquema relacional que puede ser consultado en SQL)
+Las soluciones de análisis de datos tradicionales estaban construidas sobre la base de un almacén de datos, en la que los datos se almacenan siguiendo un modelo multidimensional. Es habitual encontrar implementaciones ROLAP en la que los datos se almacenan en tablas relacionales siguiendo un esquema en estrella y son consultadas mediante SQL. pero con la aparición del fenómeno de _Big data_ o macrodatos, (caracterizados por las 3 V: volumen, velocidad y variedad) las organizaciones han tenido que adaptar sus soluciones de análisis de datos para poder procesar y analizar grandes volúmenes de datos de diferentes fuentes y formatos. Esto normalmente nos lleva a tecnologías de almacenamiento y procesamiento a escala cloud, lo que da pie a la aparición de soluciones de almacenamiento como Azure Data Lake y de procesamiento como Spark. En un data lake, los datos se almacenan en su formato nativo, como archivos sin imponer un esquema fijo para su almacenamiento. Y esto puede ser llevado más allá con la aparición de los lakehouses, que combinan la flexibilidad de los data lakes (almacenando los datos en archivos en un data lake) con la capacidad de consulta y análisis de los almacenes de datos (se crea una capa de metadatos adicional ofreciendo un acceso mediante un esquema relacional que puede ser consultado en SQL)
 
 .Las tres V de los macrodatos o del big data
 ****
@@ -84,7 +84,7 @@ OneLake es una arquitectura de Fabric centrada en lagos de datos que proporciona
 
 Un lakehouse combina la flexibilidad del almacenamiento en data lakes con el análisis de almacenamiento de datos. Microsoft Fabric ofrece una solución de lakehouse para un análisis exhaustivo en una sola plataforma SaaS.
 
-La base de Fabric es un lakehouse, creado sobre la capa de almacenamiento escalable de OneLake, y usa Spark y SQL para el procesamiento de datos. Un lakehouese es una plataforma unificada que combina:
+La base de Fabric es un lakehouse, creado sobre la capa de almacenamiento escalable de OneLake, y usa Spark y SQL para el procesamiento de datos. Un lakehouse es una plataforma unificada que combina:
 
 * El almacenamiento flexible y escalable de un data lake.
 * La capacidad de consulta y análisis de datos de un data warehouse.
@@ -101,7 +101,7 @@ Apache Spark forma parte del ecosistema de big data de Apache y es un motor de a
 
 En este apartado veremos cómo crear un lakehouse en Fabric y cómo cargar datos en el lakehouse. Para ello, seguiremos los siguientes pasos:
 
-Comenzaremos abriendo [Data Factory](https://app.fabric.microsoft.com/home?experience=data-factory) en Fabric. Data Factory es una herramienta de Fabric que permite crear y programar flujos de trabajo de datos. Data Factory se puede usar para ingerir, transformar y cargar datos en un lakehouse. Data Factory proporciona una interfaz gráfica para crear flujos de trabajo de datos y permite la integración con otros servicios de Fabric, como OneLake y Spark. Una vez abierta Data Factory, se mostrará la página de inicio de Fabric.
+Comenzaremos abriendo https://app.fabric.microsoft.com/home?experience=data-factory[Data Factory] en Fabric. Data Factory es una herramienta de Fabric que permite crear y programar flujos de trabajo de datos. Data Factory se puede usar para ingerir, transformar y cargar datos en un lakehouse. Data Factory proporciona una interfaz gráfica para crear flujos de trabajo de datos y permite la integración con otros servicios de Fabric, como OneLake y Spark. Una vez abierta Data Factory, se mostrará la página de inicio de Fabric.
 
 image::../../../images/fabric-welcome.png[]
 
@@ -130,10 +130,13 @@ Aparecerá un cuadro de diálogo para introducir un nombre para el lakehouse. In
 
 image::../../../images/fabric-lakehouse-created.png[]
 
-La parte izquierda muestra un explorador para examinar las tablas y archivos del lakehouse. Las tablas se podrán consultar en SQL. Los archivos estarán almacenados en OneLake. Crear una carpeta `data` en la carpeta `Files` y subir un archivo [sales.csv](https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/sales.csv) con datos de ejemplo.
+La parte izquierda muestra un explorador para examinar las tablas y archivos del lakehouse. Las tablas se podrán consultar en SQL. Los archivos estarán almacenados en OneLake. Crear una carpeta `data` en la carpeta `Files` y subir un archivo https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/sales.csv[sales.csv] con datos de ejemplo.
 
 
-$$$$$$$$Este archivo sería procesable con Spark. Ver cómo hacerlo**********
+[TIP]
+====
+Este archivo sería procesable con Spark. Ver cómo hacerlo.
+====
 
 
 Una vez cargado el archivo en el lakehouse, lo cargaremos en una tabla. Para ello, elegiremos la opción desde el menú que aparece en los puntos suspensivos de la tabla `sales.csv` y seleccionaremos la opción `Cargar en tablas -> Nueva tabla`. Nos pedirá un nombre para la tabla y que indiquemos el separador de campos del archivo CSV. Introducir un nombre (p.e. `sales`), mantener la coma como separador y pulsar el botón `Cargar`.
@@ -143,6 +146,11 @@ image::../../../images/fabric-load-table.png[]
 La tabla `sales` se creará correctamente, se almacenará en formato `Parquet` y se mostrarán los campos creados en la tabla. Al seleccionarla se podrá ver el contenido de la tabla.
 
 image::../../../images/fabric-table-created.png[]
+
+[NOTE]
+====
+**Parquet** es un formato de _archivo de columnas_ de código abierto diseñado para almacenar datos de manera eficiente. A diferencia de los formatos tradicionales como CSV que almacenan datos fila por fila, Parquet organiza los datos por columnas, lo que permite leer solo las columnas necesarias para una consulta específica, reduciendo significativamente el tiempo de lectura y el uso de recursos. Además, Parquet aplica compresión automática de datos, reduciendo el espacio de almacenamiento hasta en un 75% comparado con CSV. Es especialmente útil en entornos de big data y análisis, siendo compatible con herramientas como Spark, y es el formato predeterminado para almacenar tablas Delta en lakehouses de Fabric. Por ejemplo, si tenemos un archivo CSV de 1 GB con datos de ventas y solo necesitamos analizar las columnas de fecha y total, Parquet nos permitirá leer únicamente esas columnas, mientras que con CSV tendríamos que leer todo el archivo.
+====
 
 ### Consulta de la tabla con SQL
 
@@ -217,7 +225,7 @@ Para llevar a cabo el ejemplo necesitaremos una serie de datos con los que traba
 
 #### Carga de datos en el lakehouse
 
-Descargaremos en nuestro equipo este [archivo .zip de ventas](https://github.com/MicrosoftLearning/dp-data/raw/main/orders.zip) y lo subiremos a una carpeta `orders` del lakehouse. El archivo contiene datos de ventas en formato CSV de los años 2019, 2020 y 2021. La figura siguiente muestra los tres archivos en la carpeta `orders` del exploradore del lakehouse.
+Descargaremos en nuestro equipo este https://github.com/MicrosoftLearning/dp-data/raw/main/orders.zip[archivo .zip de ventas] y lo subiremos a una carpeta `orders` del lakehouse. El archivo contiene datos de ventas en formato CSV de los años 2019, 2020 y 2021. La figura siguiente muestra los tres archivos en la carpeta `orders` del exploradore del lakehouse.
 
 image::../../../images/fabric-orders-files.png[]
 
@@ -257,7 +265,7 @@ df = spark.read.format("csv").option("header","true").load("Files/orders/2019.cs
 # df now is a Spark DataFrame containing CSV data from "Files/orders/2019.csv".
 display(df) <2>
 ----
-<1> Carga los datos del archivo CSV "2019.csv" en un DataFrame de Spark. Los datos se presentan con cabecera
+<1> Carga los datos del archivo CSV `2019.csv` en un DataFrame de Spark. Los datos se presentan con cabecera
 <2> Muestra los datos en una tabla
 
 
@@ -287,7 +295,7 @@ df = spark.read.format("csv").schema(orderSchema).load("Files/orders/2019.csv") 
 display(df)
 ----
 <1> Define un esquema para los datos de ventas
-<2> Carga los datos del archivo CSV "2019.csv" en un DataFrame de Spark con el esquema definido
+<2> Carga los datos del archivo CSV `2019.csv` en un DataFrame de Spark con el esquema definido
 
 Al volver a ejecutar la celda, tras unos instantes se mostrará el dataframe con los datos de ventas con la cabecera correcta. La figura siguiente muestra los datos de ventas cargados en un DataFrame de Spark con el esquema correcto.
 
@@ -314,7 +322,7 @@ orderSchema = StructType([
 df = spark.read.format("csv").schema(orderSchema).load("Files/orders/*.csv") <1>
 display(df)
 ----
-<1> Carga los datos de todos los archivos CSV de la carpeta "Files/orders" en un DataFrame de Spark con el esquema definido.
+<1> Carga los datos de todos los archivos CSV de la carpeta `Files/orders` en un DataFrame de Spark con el esquema definido.
 
 Al ejecutar la celda, se mostrarán los datos de ventas de todos los años en un DataFrame de Spark. 
 
@@ -392,7 +400,7 @@ display(transformed_df.limit(10))
 
 ### Guardar los datos transformados
 
-Una vez realizadas las transformaciones necesarias sobre los datos, es posible guardar los datos transformados en un nuevo archivo. En entornos de procesamiento de datos suele ser habitual utilizar otros formatos de datos más eficientes que el CSV, como el formato [Parquet](https://parquet.apache.org/). El formato Parquet es un formato de archivo de almacenamiento de columnas que es muy eficiente para el análisis de datos y es compatible con Spark. A continuación veremos cómo guardar los datos transformados en un archivo Parquet.
+Una vez realizadas las transformaciones necesarias sobre los datos, es posible guardar los datos transformados en un nuevo archivo. En entornos de procesamiento de datos suele ser habitual utilizar otros formatos de datos más eficientes que el CSV, como el formato https://parquet.apache.org/[Parquet]. El formato Parquet es un formato de archivo de almacenamiento de columnas que es muy eficiente para el análisis de datos y es compatible con Spark. A continuación veremos cómo guardar los datos transformados en un archivo Parquet.
 
 El ejemplo siguiente muestra el código para guardar los datos transformados en un archivo Parquet. Para una mejor organización de los archivos, usaremos una carpeta `transformed_data` en el lakehouse para almacenar los datos transformados. El código guarda los datos transformados en una carpeta Parquet llamada `orders`. La carpeta Parquet contendrá varios archivos Parquet que contienen los datos transformados. La figura siguiente muestre los datos transformados guardados en Parquet tras actualizar el explorador del datalake.
 
