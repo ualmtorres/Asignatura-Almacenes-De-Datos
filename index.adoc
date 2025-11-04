@@ -158,6 +158,7 @@ Profesores:
 ** link:Docs/Labs/03-ConstruccionDeCubosOLAP/TrabajoAutonomo03.html[Actividad: Creación de cubos con Microsoft Analysis Services, window=_blank]
 
 * Lab04
+** https://docs.google.com/presentation/d/1zJXggCnZie2KOFWSYPjrEgnzHYygiaSTelxvWXgL5wo/edit?usp=sharing[Presentación: Introducción a Microsoft Fabric, window=_blank]
 ** link:Docs/Labs/04-Fabric/index.html[Tutorial: Procesamiento de datos con Microsoft Fabric, window=_blank]
 ** link:Docs/Labs/04-Fabric/etl.html[Tutorial: ETL con Microsoft Fabric, window=_blank]
 
